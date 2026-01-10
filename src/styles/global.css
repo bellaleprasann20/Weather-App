@@ -1,0 +1,171 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Clear Theme */
+  --clear-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --clear-overlay: rgba(102, 126, 234, 0.1);
+  
+  /* Clouds Theme */
+  --clouds-bg: linear-gradient(135deg, #a8b8d8 0%, #7f8c9f 100%);
+  --clouds-overlay: rgba(168, 184, 216, 0.1);
+  
+  /* Rain Theme */
+  --rain-bg: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+  --rain-overlay: rgba(75, 108, 183, 0.1);
+  
+  /* Snow Theme */
+  --snow-bg: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  --snow-overlay: rgba(224, 234, 252, 0.1);
+  
+  /* Thunder Theme */
+  --thunder-bg: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+  --thunder-overlay: rgba(44, 62, 80, 0.1);
+  
+  /* Common Variables */
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  --text-primary: #2d3748;
+  --text-secondary: #718096;
+  --text-light: #ffffff;
+  --border-radius: 20px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  overflow-x: hidden;
+  min-height: 100vh;
+  transition: background 0.5s ease;
+}
+
+/* Theme Backgrounds */
+body.theme-clear {
+  background: var(--clear-bg);
+}
+
+body.theme-clouds {
+  background: var(--clouds-bg);
+}
+
+body.theme-rain {
+  background: var(--rain-bg);
+}
+
+body.theme-snow {
+  background: var(--snow-bg);
+}
+
+body.theme-thunder,
+body.theme-thunderstorm {
+  background: var(--thunder-bg);
+}
+
+body.theme-mist,
+body.theme-fog,
+body.theme-haze {
+  background: var(--clouds-bg);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 13px;
+  }
+}
